@@ -1,21 +1,16 @@
-package com.brk.expense.track.expensetrack.model;
+package com.brk.expense.track.expensetrack.dataobject;
 
-import jakarta.persistence.*;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Entity
-@Table(name = "APP_USER")
-public class User {
+public class UserDO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
     private Long id;
-
-    @Column(name = "USERNAME")
     private String username;
 
-    @Column(name = "EMAIL")
     private String email;
+
     public Long getId() {
         return id;
     }
@@ -28,15 +23,15 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
